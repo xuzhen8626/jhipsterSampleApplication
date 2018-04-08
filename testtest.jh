@@ -1,0 +1,34 @@
+entity SearchData{
+    title String required maxlength(256),
+    content String maxlength(2000),
+    sourceType String maxlength(20),
+    entityId String maxlength(64),
+    kudosNum Integer required max(9),
+    commentNum Integer required max(9),
+    readNum Integer required max(9),
+    collectionNum Integer required max(9),
+    source String maxlength(32),
+    category DataCategory,
+    status Integer,
+    originData TextBlob,
+    lastModifiedBy String maxlength(64),
+    lastModifiedTime ZonedDateTime,
+    createdBy String required maxlength(64),
+    createdTime ZonedDateTime,
+    delFlag Boolean,
+    version Integer,
+    tenantId String maxlength(64)
+}
+
+enum DataCategory{
+      TASK, COMMENT, WORD
+}
+
+
+// Set pagination options
+paginate * with pagination
+dto * with mapstruct
+microservice * with EsenSearch
+service all with serviceClass
+
+
