@@ -1,53 +1,30 @@
-/**搜索数据表*/
+
 entity SearchOriginData{
-    /**请求原数据*/
     originData TextBlob,
-    /**项目类型*/
     category DataCategory,
-    /**状态*/
     status Byte,
-    /**更新者*/
     lastModifiedBy String maxlength(64),
-    /**更新时间*/
     lastModifiedTime ZonedDateTime,
-    /**创建者*/
     createdBy String required maxlength(64),
-    /**创建时间*/
     createdTime ZonedDateTime,
-    /**删除标记*/
     delFlag Boolean,
-    /**数据库版本号*/
     version Integer,
-    /**租户ID*/
     tenantId String maxlength(64)
 }
 
 
-/**搜索数据表*/
 entity SearchRecordData{
-    /**OpenId*/
     openId String maxlength(64),
-    /**UserId*/
     userId String maxlength(64),
-    /**数量*/
     count Integer,
-    /**搜索关键字记录*/
     catalog String maxlength(256),
-    /**项目类型*/
     category DataCategory,
-    /**更新者*/
     lastModifiedBy String maxlength(64),
-    /**更新时间*/
     lastModifiedTime Instant,
-    /**创建者*/
     createdBy String required maxlength(64),
-    /**创建时间*/
     createdTime Instant,
-    /**删除标记*/
     delFlag Boolean,
-    /**数据库版本号*/
     version Integer,
-    /**租户ID*/
     tenantId String maxlength(64)
 }
 
