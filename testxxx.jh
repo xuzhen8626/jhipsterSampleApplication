@@ -1,0 +1,13 @@
+
+enum DataCategory{
+      TASK, COMMENT, WORD
+}
+
+
+// Set pagination options
+paginate * with pagination
+dto * with mapstruct
+microservice * with EsenSearch
+service all with serviceClass
+
+
