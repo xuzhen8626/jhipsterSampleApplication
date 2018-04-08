@@ -1,23 +1,13 @@
 entity SearchOriginData{
-    /**请求原数据*/
     originData TextBlob,
-    /**项目类型*/
     category String maxlength(32),
-    /**状态*/
     status Byte,
-    /**更新者*/
     lastModifiedBy String maxlength(64),
-    /**更新时间*/
     lastModifiedTime ZonedDateTime,
-    /**创建者*/
     createdBy String required maxlength(64),
-    /**创建时间*/
     createdTime ZonedDateTime,
-    /**删除标记*/
     delFlag Boolean,
-    /**数据库版本号*/
     version Integer,
-    /**租户ID*/
     tenantId String maxlength(64)
 }
 
