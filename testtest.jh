@@ -1,0 +1,109 @@
+/**搜索数据表*/
+entity SearchData(search_data){
+    /**名称*/
+    title String required maxlength(256),
+    /**描述*/
+    content String maxlength(2000),
+    /**数据类型*/
+    sourceType String maxlength(20),
+    /**原数据ID*/
+    entityId String maxlength(64),
+    /**点赞人数*/
+    kudosNum Integer required max(9),
+    /**评论数*/
+    commentNum Integer required max(9),
+    /**阅读数*/
+    readNum Integer required max(9),
+    /**收藏数*/
+    collectionNum Integer required max(9),
+    /**数据来源*/
+    source String maxlength(32),
+    /**项目类型*/
+    category DataCategory,
+    /**状态*/
+    status Integer,
+    /**请求原数据*/
+    originData TextBlob,
+    /**更新者*/
+    lastModifiedBy String maxlength(64),
+    /**更新时间*/
+    lastModifiedTime ZonedDateTime,
+    /**创建者*/
+    createdBy String required maxlength(64),
+    /**创建时间*/
+    createdTime ZonedDateTime,
+    /**删除标记*/
+    delFlag Boolean,
+    /**数据库版本号*/
+    version Integer,
+    /**租户ID*/
+    tenantId String maxlength(64)
+}
+
+
+/**搜索数据表*/
+entity SearchOriginData(search_origin_data){
+    /**请求原数据*/
+    originData TextBlob,
+    /**项目类型*/
+    category DataCategory,
+    /**状态*/
+    status Byte,
+    /**更新者*/
+    lastModifiedBy String maxlength(64),
+    /**更新时间*/
+    lastModifiedTime ZonedDateTime,
+    /**创建者*/
+    createdBy String required maxlength(64),
+    /**创建时间*/
+    createdTime ZonedDateTime,
+    /**删除标记*/
+    delFlag Boolean,
+    /**数据库版本号*/
+    version Integer,
+    /**租户ID*/
+    tenantId String maxlength(64)
+}
+
+
+/**搜索数据表*/
+entity SearchRecordData(search_record_data){
+    /**OpenId*/
+    openId String maxlength(64),
+    /**UserId*/
+    userId String maxlength(64),
+    /**数量*/
+    count Integer,
+    /**搜索关键字记录*/
+    catalog String maxlength(256),
+    /**项目类型*/
+    category DataCategory,
+    /**更新者*/
+    lastModifiedBy String maxlength(64),
+    /**更新时间*/
+    lastModifiedTime Instant,
+    /**创建者*/
+    createdBy String required maxlength(64),
+    /**创建时间*/
+    createdTime Instant,
+    /**删除标记*/
+    delFlag Boolean,
+    /**数据库版本号*/
+    version Integer,
+    /**租户ID*/
+    tenantId String maxlength(64)
+}
+
+
+enum DataCategory{
+      TASK, COMMENT, WORD
+}
+
+
+// Set pagination options
+paginate * with pagination
+dto * with mapstruct
+microservice * with EsenSearch
+service all with serviceClass
+
+
